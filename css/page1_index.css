@@ -1,0 +1,25 @@
+.image-wrapper {
+    max-width: 300px;
+    max-height: 500px;
+}
+.card {
+    max-width: 70%;
+}
+#features9-4
+{
+    /* position: absolute; */
+}
+
+.order {
+    /* float: right; */
+    width: 28%;
+    height: 600px;
+    border: 2px solid black;
+    /* display: flex; */
+    overflow: hidden;
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 5%;
+    /* position: absolute; */
+}
