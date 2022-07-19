@@ -16,6 +16,7 @@
 
 
     <title>Page 1</title>
+    <script src="https://kit.fontawesome.com/da3f2c352c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -131,7 +132,7 @@
 
 
     <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" xmlns="http://www.w3.org/1999/html" id="features9-4">
-    <div class="order">Order</div>
+    <!-- <div class="order">Order</div> -->
         <div class="container">
             <?php $result = mysqli_query($conn, "SELECT * FROM Book");
             //                $row=sqlsrv_fetch_array($result);
@@ -217,27 +218,17 @@
                     </div>
                 </div>
                 <div class="map-wrapper col-12 col-md-6">
-                    <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDk89J4FSunMF33ruMVWJaJht_Ro0kvoXs&amp;q=350 5th Ave, New York, NY 10118" allowfullscreen=""></iframe></div>
+                    <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.706086416563!2d105.8418001142449!3d21.004415593986383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac76e3624a59%3A0x4f3ae5ee12bfcc19!2zVGjGsCB2aeG7h24gVOG6oSBRdWFuZyBC4butdQ!5e0!3m2!1svi!2sus!4v1658204913145!5m2!1svi!2sus" allowfullscreen=""></iframe></div>
                 </div>
             </div>
         </div>
     </section>
 
     <section data-bs-version="5.1" class="footer3 cid-sFAOjz8nX7" once="footers" id="footer3-d">
-
-
-
-
-
         <div class="container">
             <div class="media-container-row align-center mbr-white">
                 <div class="row row-links">
                     <ul class="foot-menu">
-
-
-
-
-
                         <li class="foot-menu-item mbr-fonts-style display-7"><a href="#top" class="text-white">Home</a></li>
                         <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#content4-5" class="text-white">Features</a></li>
                         <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#content4-6" class="text-white">Shop</a></li>
@@ -247,11 +238,6 @@
                 </div>
                 <div class="row social-row">
                     <div class="social-list align-right pb-2">
-
-
-
-
-
 
                         <div class="soc-item">
                             <a href="https://twitter.com/mobirise" target="_blank">
@@ -296,6 +282,7 @@
     <section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2826850" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a>
         <p style="margin: 0;text-align: center;" class="display-7">Created with &#8204;</p><a style="z-index:1" href="https://mobirise.com"> Web Site Software</a>
     </section>
+    <div class="circle"><i class="fa-solid fa-cart-shopping" id="iconCart"></i></div>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/smoothscroll/smooth-scroll.js"></script>
     <script src="assets/ytplayer/index.js"></script>

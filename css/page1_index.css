@@ -4,12 +4,26 @@
 }
 .card {
     max-width: 70%;
+    
 }
-#features9-4
-{
-    /* position: absolute; */
+#iconCart {
+    font-size: 40px;
+    /* border: 1px solid black; */
+    margin-top: 30%;
 }
 
+.circle
+{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    right: 2%;
+    bottom: 5%;
+    position: fixed;
+    background-color: #599ee2;
+}
 .order {
     /* float: right; */
     width: 28%;

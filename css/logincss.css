@@ -1,6 +1,7 @@
 /* Bordered form */
 form {
     border: 3px solid #f1f1f1;
+    
 }
 
 /* Full-width inputs */
@@ -46,11 +47,14 @@ button:hover {
 img.avatar {
     width: 40%;
     border-radius: 50%;
+    border: 1px black solid;
+    margin-bottom: 20px;
 }
 
 /* Add padding to containers */
 .container {
     padding: 16px;
+    max-width: 50%;
 }
 
 /* The "Forgot password" text */
