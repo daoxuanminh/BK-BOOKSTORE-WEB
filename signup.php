@@ -65,7 +65,7 @@ if ($_POST) {
             <input class="su" type="date" name="user_dob" required oninvalid="this.setCustomValidity('Bạn chưa điền ô nay!')" onchange="this.setCustomValidity('')" type="text">
 
             <label for="user_sex"><b>Sex</b></label>
-            <input class="su" type="email" placeholder="Enter user name sex" name="user_sex" required oninvalid="this.setCustomValidity('Bạn chưa điền ô nay!')" onchange="this.setCustomValidity('')" type="text">
+            <input class="su" type="text" placeholder="Enter user name sex" name="user_sex" required oninvalid="this.setCustomValidity('Bạn chưa điền ô nay!')" onchange="this.setCustomValidity('')" type="text">
 
             <label for="user_sex"><b>Phone Number</b></label>
             <input class="su" type="text" placeholder="Enter phone number" name="user_phone" required oninvalid="this.setCustomValidity('Bạn chưa điền ô nay!')" onchange="this.setCustomValidity('')" type="text">
