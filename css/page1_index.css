@@ -36,6 +36,12 @@
     z-index: 1;
 }
 
+
+.border {
+    /* padding: 10px; */
+    border-bottom: 2px solid black;
+}
+
 .circle:hover {
     background-color: aqua;
 }

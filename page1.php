@@ -131,7 +131,18 @@
     </section>
 
     <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" xmlns="http://www.w3.org/1999/html" id="features9-4">
-        <div id="order">Order</div>
+        <div id="order">
+            <div><strong>Giỏ Hàng</strong></div>
+            <div>
+                <span class="border">Sản Phẩm</span>
+                <span class="border">Giá</span>
+                <span class="border">Số lượng</span>
+            </div>
+            <!-- code php hoặc js vào đây -->
+            <div><strong>Tổng cộng</strong></div>
+            <div>Đóng</div>
+            <div>Thanh toán</div>
+        </div>
         <div class="container">
             <?php $result = mysqli_query($conn, "SELECT * FROM Book");
             //                $row=sqlsrv_fetch_array($result);
