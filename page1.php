@@ -130,23 +130,22 @@
         </div>
     </section>
 
-
     <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" xmlns="http://www.w3.org/1999/html" id="features9-4">
-    <!-- <div class="order">Order</div> -->
+        <div id="order">Order</div>
         <div class="container">
             <?php $result = mysqli_query($conn, "SELECT * FROM Book");
             //                $row=sqlsrv_fetch_array($result);
 
             ?>
             <?php while ($row = mysqli_fetch_array($result)) { ?>
-                <div class="card">
+                <div class="card book">
                     <div class="card-wrapper">
                         <div class="row align-items-center">
                             <div class="col-12 col-md-4">
                                 <div class="image-wrapper">
-                                <!-- <img src="assets/images/mbr.jpeg" alt="Mobirise Website Builder"> -->
+                                    <!-- <img src="assets/images/mbr.jpeg" alt="Mobirise Website Builder"> -->
                                     <?php
-                                    echo "<img src='img/" . $row['image'] . "' alt='img'>";                              
+                                    echo "<img src='img/" . $row['image'] . "' alt='img'>";
                                     ?>
                                 </div>
                             </div>
@@ -155,7 +154,7 @@
                                     <div class="row">
                                         <div class="col-md">
                                             <h6 class="card-title mbr-fonts-style display-2"><strong><?php echo $row['book_name'] ?>&nbsp;</strong></h6>
-                                            <p class="mbr-text mbr-fonts-style display-7"><?php echo substr($row['description'],0,200)."..." ?><br></p>
+                                            <p class="mbr-text mbr-fonts-style display-7"><?php echo substr($row['description'], 0, 200) . "..." ?><br></p>
                                         </div>
                                         <div class="col-md-auto">
                                             <p class="price mbr-fonts-style display-2"><?php echo $row['price'] ?></p>
@@ -171,7 +170,7 @@
                     </div>
                 </div>
             <?php } ?>
-            
+
     </section>
 
 
@@ -282,13 +281,29 @@
     <section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2826850" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a>
         <p style="margin: 0;text-align: center;" class="display-7">Created with &#8204;</p><a style="z-index:1" href="https://mobirise.com"> Web Site Software</a>
     </section>
-    <div class="circle"><i class="fa-solid fa-cart-shopping" id="iconCart"></i></div>
+    <button class="circle" id="circle"><i class="fa-solid fa-cart-shopping" id="iconCart"></i></button>
+    <script>
+        document
+            .getElementsByClassName("circle")
+            .item(0)
+            .addEventListener("click", () => {
+                const ele = document.getElementById('order');
+                ele.style.visibility = 'visible';
+                const dom = document.getElementsByClassName("book");
+                const len = dom.length;
+                for (let i = 0; i < len; ++i) {
+                    dom.item(i).style.maxWidth = "70%";
+                }
+                
+            });
+    </script>
+
+
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/smoothscroll/smooth-scroll.js"></script>
     <script src="assets/ytplayer/index.js"></script>
     <script src="assets/dropdown/js/navbar-dropdown.js"></script>
     <script src="assets/theme/js/script.js"></script>
-
 
 </body>
 
