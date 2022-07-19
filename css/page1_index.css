@@ -34,7 +34,6 @@
     top: 5%;
     visibility: hidden;
     z-index: 1;
-    /* position: absolute; */
 }
 
 .circle:hover {
