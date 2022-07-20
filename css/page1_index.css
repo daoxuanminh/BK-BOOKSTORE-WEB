@@ -30,8 +30,9 @@
     overflow: hidden;
     /* display: block; */
     position: fixed;
-    right: 0;
-    top: 5%;
+    right: 2%;
+    top: 7%;
+    background-color: rgba(143, 145, 148, 0.747);
     visibility: hidden;
     z-index: 1;
 }

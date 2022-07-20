@@ -4,7 +4,6 @@ require_once "../connect_db/connect_db.php";
 global $conn;
 
 if(isset($_POST['submit'])) {
-    $book_id = $_POST['book_id'];
     $book_name = $_POST['book_name'];
     $price = $_POST['price'];
     $publication_date = $_POST['publication_date'];
@@ -15,8 +14,8 @@ if(isset($_POST['submit'])) {
     $category = $_POST['category'];
     $description = $_POST['description'];
 
-    $query = "insert into Book 
-values ('" . $book_id . "','" . $book_name . "','" . $price . "',
+    $query = "insert into Book (book_name,price,publication_date,quantity,publisher_name,author_name,image,category,description)
+values ('" . $book_name . "','" . $price . "',
         '" . $publication_date . "','" . $quantity . "','" . $publisher_name . "',
         '" . $author_name . "',
         '" . $image . "','" . $category . "','" . $description . "')";

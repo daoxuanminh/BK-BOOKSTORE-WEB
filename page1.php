@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/dropdown/css/style.css">
     <link rel="stylesheet" href="assets/socicon/css/styles.css">
     <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="./css/cartcss.css">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
@@ -31,6 +32,7 @@
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="/css/page1_index.css">
+    <script src="./Page_1.js"></script>
 
 
 
@@ -131,18 +133,37 @@
     </section>
 
     <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" xmlns="http://www.w3.org/1999/html" id="features9-4">
+
         <div id="order">
-            <div><strong>Giỏ Hàng</strong></div>
-            <div>
-                <span class="border">Sản Phẩm</span>
-                <span class="border">Giá</span>
-                <span class="border">Số lượng</span>
+            <div class="modal-body">
+                <div class="cart-row">
+                    <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                    <span class="cart-price cart-header cart-column">Giá</span>
+                    <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                </div>
+                <div class="cart-items">
+                    <div class="cart-row">
+                        <div class="cart-item cart-column">
+                            <img class="cart-item-image" src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/sualai.jpg?v=1573720306000" width="100" height="100">
+                            <span class="cart-item-title">Mũi Hàn 500</span>
+                        </div>
+                        <span class="cart-price cart-column">25000đ</span>
+                        <div class="cart-quantity cart-column">
+                            <input class="cart-quantity-input" type="number" value="1">
+                            <button class="btn btn-danger" type="button">Xóa</button>
+                        </div>
+                    </div>
+                    <div class="cart-total">
+                        <strong class="cart-total-title">Tổng Cộng:</strong>
+                        <span class="cart-total-price">3223000VNĐ</span>
+                    </div>
+                </div>
             </div>
-            <!-- code php hoặc js vào đây -->
-            <div><strong>Tổng cộng</strong></div>
-            <div>Đóng</div>
-            <div>Thanh toán</div>
         </div>
+
+
+
+
         <div class="container">
             <?php $result = mysqli_query($conn, "SELECT * FROM Book");
             //                $row=sqlsrv_fetch_array($result);
@@ -305,9 +326,11 @@
                 for (let i = 0; i < len; ++i) {
                     dom.item(i).style.maxWidth = "70%";
                 }
-                
+
             });
     </script>
+
+    
 
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>

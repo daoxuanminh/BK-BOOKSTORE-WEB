@@ -8,16 +8,31 @@ global $conn;
 $err = [];
 if ($_POST) {
     if (isset($_POST['user_name']) != 0) {
-        $user_name = $_POST['user_name'];
+        $user_account = $_POST['user_account'];
         $user_pass = $_POST['user_pass'];
         $ruser_pass = $_POST['ruser_pass'];
+        $user_name = $_POST['user_name'];
+        $user_email = $_POST['user_email'];
+        $user_dob = $_POST['user_dob'];
+        $user_sex = $_POST['user_sex'];
+
+        $user_phone = $_POST['user_phone'];
+        $user_address = $_POST['user_address'];
+        $sql = "SELECT account FROM customer where account='$user_account'";
+        $result = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+
+        if ($row) {
+            $err['account'] = 'Tài Khoản Đã Tồn Tại';
+        }else{
         if ($user_pass != $ruser_pass) {
-            $err['ruser_pass'] = 'Nhap lai mat khau cung sai ,ngu';
+            $err['ruser_pass'] = 'Nhap lai mat khau khong chinh xác';
         } else {
-            var_dump($err);
             header("Location:login.php");
-            $sql = "INSERT INTO admin_i(tk,mk) VALUES ('$user_name','$user_pass')";
+            $sql = "INSERT INTO customer(account,password,name,sex,dob,email,phone_number,address) VALUES ('$user_account','$user_pass','$user_name','$user_sex','$user_dob','$user_email','$user_phone','$user_address')";
+
             $query = mysqli_query($conn, $sql);
+        }
         }
     }
 }
@@ -48,7 +63,11 @@ if ($_POST) {
 
             <label for="user_account"><b>Account</b></label>
             <input class="su" type="text" placeholder="Enter user account" name="user_account" required oninvalid="this.setCustomValidity('Bạn chưa điền ô nay!')" onchange="this.setCustomValidity('')" type="text">
-
+            <div style="margin-top:-10px">
+                <span style="color: red">
+                    <?php echo (isset($err['account'])) ? $err['account'] : '' ?>
+                </span>
+            </div>
             <label for="user_pass"><b>Password</b></label>
             <input class="su" type="password" placeholder="Enter Password" name="user_pass" required oninvalid="this.setCustomValidity('Bạn chưa điền ô nay!')" onchange="this.setCustomValidity('')" type="text">
 
@@ -59,7 +78,7 @@ if ($_POST) {
             <input class="su" type="text" placeholder="Enter user name" name="user_name" required oninvalid="this.setCustomValidity('Bạn chưa điền ô nay!')" onchange="this.setCustomValidity('')" type="text">
             
             <label for="user_email"><b>Email</b></label>
-            <input class="su" type="email" placeholder="Enter user name email" name="user_email" required oninvalid="this.setCustomValidity('Bạn chưa điền ô nay!')" onchange="this.setCustomValidity('')" type="text">
+            <input class="su" type="email" placeholder="Enter user name email" name="user_email" required oninvalid="this.setCustomValidity('vui lòng nhập đúng dạng email')" onchange="this.setCustomValidity('')" type="text">
 
             <label for="user_dob"><b>DoB</b></label>
             <input class="su" type="date" name="user_dob" required oninvalid="this.setCustomValidity('Bạn chưa điền ô nay!')" onchange="this.setCustomValidity('')" type="text">

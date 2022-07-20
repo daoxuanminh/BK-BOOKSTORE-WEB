@@ -35,7 +35,7 @@ global $conn;
             if ($_POST) {
                 $user_name = $_POST['user_name'];
                 $user_pass = $_POST['user_pass'];
-                $result = mysqli_query($conn, "SELECT * FROM admin_i where tk='$user_name' and mk='$user_pass'");
+                $result = mysqli_query($conn, "SELECT * FROM customer where account='$user_name' and password='$user_pass'");
                 $row = mysqli_fetch_array($result);
 
                 if ($row) {

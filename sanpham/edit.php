@@ -43,7 +43,7 @@ while ($row=mysqli_fetch_array($result)){
                     <form action="update.php?ID=<?php echo $book_id ?>" method="post">
                         <label for="book_name"><b>book_name</b></label>
                         <input type="text" class="form-control mb-2" placeholder="book_name" name="book_name" value="<?php echo $book_name ?>">
-<!--                        <label for="quantity"><b>quantity</b></label>-->
+                        <label for="quantity"><b>quantity</b></label>
                         <input type="text" class="form-control mb-2" placeholder="quantity" name="quantity" value="<?php echo $quantity ?>">
                         <label for="publication_date"><b>publication_date</b></label>
                         <input type="text" class="form-control mb-2" placeholder="publication_date" name="publication_date" value="<?php echo $publication_date ?>">
