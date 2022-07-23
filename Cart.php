@@ -1,61 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+    <!-- Site made with Mobirise Website Builder v5.6.11, https://mobirise.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<div class=" modal-body">
+    <meta name="generator" content="Mobirise v5.6.11, mobirise.com">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:src" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:title" content="Page 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <meta name="description" content="">
 
+
+    <title>Cart</title>
+    <script src="https://kit.fontawesome.com/da3f2c352c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="./css/cartcss.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+    </noscript>
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="/css/page1_index.css">
+    <script src="./Page_1.js"></script>
 </head>
 
 <body>
-    <div class="cart-row">
-        <span class="cart-item cart-header cart-column">Sản Phẩm</span>
-        <span class="cart-price cart-header cart-column">Giá</span>
-        <span class="cart-quantity cart-header cart-column">Số Lượng</span>
-    </div>
-    <div class="cart-items">
-        <div class="cart-row">
-            <div class="cart-item cart-column">
-                <img class="cart-item-image" src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/sualai.jpg?v=1573720306000" width="100" height="100">
-                <span class="cart-item-title">Mũi Hàn 500</span>
+    <?php
+    include "connect_db/connect_db.php";
+    //    $user=[];
+    $user = (isset($_SESSION['user'])) ? $_SESSION['user'] : [];
+    // echo $user;
+    //    $user=$_SESSION['user'];
+    ?>
+
+    <section data-bs-version="5.1" class="menu menu3 cid-sFAA5oUu2Y" once="menu" id="menu3-1">
+
+        <nav class="navbar navbar-dropdown navbar-expand-lg">
+            <div class="container">
+                <div class="navbar-brand">
+                    <i class="fa-solid fa-cart-shopping navbar-caption-wrap" id = "icon-Cart"></i>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-secondary display-5" href="https://mobiri.se">Cart</a></span>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="#top">Home&nbsp;</a></li>
+                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">Features</a></li>
+                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">Shop</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">About</a></li>
+                    </ul>
+                    <div class="icons-menu">
+                        <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                            <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
+                        </a>
+                        <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                            <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                        <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                            <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+
+                    </div>
+                    <?php
+                    if (isset($user['tk'])) {
+                    ?>
+                        <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="logout.php">
+                                Đăng xuất</a></div>
+                    <?php } else { ?>
+
+                        <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="login.php">
+                                Đăng Nhập</a></div>
+                    <?php } ?>
+                </div>
             </div>
-            <span class="cart-price cart-column">25000đ</span>
-            <div class="cart-quantity cart-column">
-                <input class="cart-quantity-input" type="number" value="1">
-                <button class="btn btn-danger" type="button">Xóa</button>
-            </div>
-        </div>
-        <div class="cart-total">
-            <strong class="cart-total-title">Tổng Cộng:</strong>
-            <span class="cart-total-price">3223000VNĐ</span>
-        </div>
-    </div>
-    </div>, initial-scale=1.0">
+        </nav>
+    </section>
 
 
-    // xóa cart
-    var remove_cart = document.getElementsByClassName("btn-danger");
-    for (var i = 0; i < remove_cart.length; i++) { var button=remove_cart[i] button.addEventListener("click", function () { var button_remove=event.target button_remove.parentElement.parentElement.remove() }) } // update cart function updatecart() { var cart_item=document.getElementsByClassName("cart-items")[0]; var cart_rows=cart_item.getElementsByClassName("cart-row"); var total=0; for (var i=0; i < cart_rows.length; i++) { var cart_row=cart_rows[i] var price_item=cart_row.getElementsByClassName("cart-price ")[0]
-      var quantity_item = cart_row.getElementsByClassName(" cart-quantity-input")[0] var price=parseFloat(price_item.innerText)// chuyển một chuổi string sang number để tính tổng tiền. var quantity=quantity_item.value // lấy giá trị trong thẻ input total=total + (price * quantity) } document.getElementsByClassName("cart-total-price")[0].innerText=total + 'VNĐ' // Thay đổi text=total trong .cart-total-price. Chỉ có một .cart-total-price nên mình sử dụng [0]. } // thay đổi số lượng sản phẩm var quantity_input=document.getElementsByClassName("cart-quantity-input"); for (var i=0; i < quantity_input.length; i++) { var input=quantity_input[i]; input.addEventListener("change", function (event) { var input=event.target if (isNaN(input.value) || input.value <=0) { input.value=1; } updatecart() }) } // Thêm vào giỏ var add_cart=document.getElementsByClassName("btn-cart"); for (var i=0; i < add_cart.length; i++) { var add=add_cart[i]; add.addEventListener("click", function (event) { var button=event.target; var product=button.parentElement.parentElement; var img=product.parentElement.getElementsByClassName("img-prd")[0].src var title=product.getElementsByClassName("content-product-h3")[0].innerText var price=product.getElementsByClassName("price")[0].innerText addItemToCart(title, price, img) // Khi thêm sản phẩm vào giỏ hàng thì sẽ hiển thị modal modal.style.display="block" ; updatecart() }) } function addItemToCart(title, price, img) { var cartRow=document.createElement('div') cartRow.classList.add('cart-row') var cartItems=document.getElementsByClassName('cart-items')[0] var cart_title=cartItems.getElementsByClassName('cart-item-title') // Nếu title của sản phẩm bằng với title mà bạn thêm vao giỏ hàng thì sẽ thông cho user. for(var i=0; i < cart_title.length; i++) { if (cart_title[i].innerText==title) { alert('Sản Phẩm Đã Có Trong Giỏ Hàng') return } } var cartRowContents=` <div class="cart-item cart-column">
-        <img class="cart-item-image" src="${img}" width="100" height="100">
-        <span class="cart-item-title">${title}</span>
+
+    <section data-bs-version="5.1" class="content4 cid-sFADQxFnEn" id="content4-5">
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="title col-md-12 col-lg-10">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
+                        <strong>Our Shop Features</strong>
+                    </h3>
+                    <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+
+                </div>
+            </div>
         </div>
-        <span class="cart-price cart-column">${price}</span>
-        <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1">
-            <button class="btn btn-danger" type="button">Xóa</button>
-        </div>`
-        cartRow.innerHTML = cartRowContents
-        cartItems.append(cartRow)
-        cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', function () {
-        var button_remove = event.target
-        button_remove.parentElement.parentElement.remove()
-        updatecart()
-        })
-        cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', function (event) {
-        var input = event.target
-        if (isNaN(input.value) || input.value <= 0) { input.value=1; } updatecart() }) } 
-    </body>
+    </section>
+
+
+
+    <section data-bs-version="5.1" class="content4 cid-sFADQQfNeA" id="content4-6">
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="title col-md-12 col-lg-10">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-1"><strong>Shop Now</strong></h3>
+                    <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section data-bs-version="5.1" class="contacts3 map1 cid-sFAOgbarYq" id="contacts3-c">
+
+
+
+<div class="container">
+    <div class="mbr-section-head">
+        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+            <strong>Contacts</strong>
+        </h3>
+
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="card col-12 col-md-6">
+            <div class="card-wrapper">
+                <div class="image-wrapper">
+                    <span class="mbr-iconfont mobi-mbri-phone mobi-mbri" style="color: rgb(5, 56, 107); fill: rgb(5, 56, 107);"></span>
+                </div>
+                <div class="text-wrapper">
+                    <h6 class="card-title mbr-fonts-style mb-1 display-5">
+                        <strong>Phone</strong>
+                    </h6>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        0 (800) 123 45 67
+                    </p>
+                </div>
+            </div>
+            <div class="card-wrapper">
+                <div class="image-wrapper">
+                    <span class="mbr-iconfont mobi-mbri-letter mobi-mbri" style="color: rgb(5, 56, 107); fill: rgb(5, 56, 107);"></span>
+                </div>
+                <div class="text-wrapper">
+                    <h6 class="card-title mbr-fonts-style mb-1 display-5">
+                        <strong>Email</strong>
+                    </h6>
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        <a href="mailto:info@site.com" class="text-primary">info@site.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="map-wrapper col-12 col-md-6">
+            <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.706086416563!2d105.8418001142449!3d21.004415593986383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac76e3624a59%3A0x4f3ae5ee12bfcc19!2zVGjGsCB2aeG7h24gVOG6oSBRdWFuZyBC4butdQ!5e0!3m2!1svi!2sus!4v1658204913145!5m2!1svi!2sus" allowfullscreen=""></iframe></div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section data-bs-version="5.1" class="footer3 cid-sFAOjz8nX7" once="footers" id="footer3-d">
+<div class="container">
+    <div class="media-container-row align-center mbr-white">
+        <div class="row row-links">
+            <ul class="foot-menu">
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="#top" class="text-white">Home</a></li>
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#content4-5" class="text-white">Features</a></li>
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#content4-6" class="text-white">Shop</a></li>
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#features16-9" class="text-white">About</a></li>
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#contacts3-c" class="text-white">Contacts</a></li>
+            </ul>
+        </div>
+        <div class="row social-row">
+            <div class="social-list align-right pb-2">
+
+                <div class="soc-item">
+                    <a href="https://twitter.com/mobirise" target="_blank">
+                        <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                    </a>
+                </div>
+                <div class="soc-item">
+                    <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                        <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                    </a>
+                </div>
+                <div class="soc-item">
+                    <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                        <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                    </a>
+                </div>
+                <div class="soc-item">
+                    <a href="https://instagram.com/mobirise" target="_blank">
+                        <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                    </a>
+                </div>
+                <div class="soc-item">
+                    <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
+                        <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                    </a>
+                </div>
+                <div class="soc-item">
+                    <a href="https://www.behance.net/Mobirise" target="_blank">
+                        <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row row-copirayt">
+            <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                © Copyright 2025 Mobirise. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+<section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2826850" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a>
+<p style="margin: 0;text-align: center;" class="display-7">Created with &#8204;</p><a style="z-index:1" href="https://mobirise.com"> Web Site Software</a>
+</section>
+
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/smoothscroll/smooth-scroll.js"></script>
+<script src="assets/ytplayer/index.js"></script>
+<script src="assets/dropdown/js/navbar-dropdown.js"></script>
+<script src="assets/theme/js/script.js"></script>
+
+</body>
 
 </html>

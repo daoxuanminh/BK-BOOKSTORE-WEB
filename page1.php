@@ -178,6 +178,7 @@
                                     <!-- <img src="assets/images/mbr.jpeg" alt="Mobirise Website Builder"> -->
                                     <?php
                                     echo "<img src='img/" . $row['image'] . "' alt='img'>";
+                                    echo $row['book_id'];
                                     ?>
                                 </div>
                             </div>
@@ -192,7 +193,8 @@
                                             <p class="price mbr-fonts-style display-2"><?php echo $row['price'] ?></p>
                                             <div class="mbr-section-btn"><a href="" class="btn btn-secondary display-4">
                                                     Add to cart
-                                                </a></div>
+                                                </a>
+                                            </div>
                                         </div>
                                         <div></div>
                                     </div>
