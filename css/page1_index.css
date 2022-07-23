@@ -8,20 +8,26 @@
     text-align: right;
     margin-right: 8%;
 }
-
-select {
-    border: 3px solid black;
-    border-radius: 2pc;
-    
+.inl {
+    display: inline-block;
 }
-.search input{
-    border: 3px solid black;
+input {
+    height: 35px;
     border-radius: 5px;
 }
-#text-input
-{
-    width: 300px;
+#text-input{
+    width: 500px;
 }
+select {
+    height: 35px;
+    border-radius: 10px;
+}
+
+.chucnang
+{
+    padding-left: 40%;
+}
+
 #iconCart {
     font-size: 40px;
     /* border: 1px solid black; */
@@ -68,4 +74,22 @@ select {
 
 .circle:hover {
     background-color: aqua;
+}
+#logo{
+    max-width: 150px;
+    max-height: 150px;
+}
+#logoCart
+{
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 50% 50%;
+  overflow: hidden;
+  border: 1px solid black;
+  /* display: inline-block; */
+  right: 20px;
+  bottom: 100px;
+  position: fixed;
+  z-index: 1;
+  background-color: aqua;
 }

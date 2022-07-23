@@ -51,16 +51,9 @@
             <div class="container">
                 <div class="navbar-brand bk-book">
 
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-secondary display-5" href="./page1.php">BK Book</a></span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-secondary display-5" href="./page1.php"><img src="./img/logo.jpg" alt="eroor" id="logo"></a></span>
                 </div>
-                <div class="align-content-center" class="search">
 
-                    <form action="" method="get" >
-                            <input type="search" name="keyword" placeholder="Tim Kiem ....." id="text-input"/>
-                            <input type="submit" value="Search"/>
-                    </form>
-
-                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <div class="hamburger">
                         <span></span>
@@ -93,11 +86,11 @@
                     if (isset($user['account'])) {
                     ?>
                         <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="logout.php">
-                                Đăng xuất</a></div>
+                                Logout</a></div>
                     <?php } else { ?>
 
                         <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="login.php">
-                                Đăng Nhập</a></div>
+                                Login</a></div>
                     <?php } ?>
                 </div>
             </div>
@@ -105,6 +98,8 @@
     </section>
 
 
+
+    <div id="logoCart"><a href="./Cart.php"><img src="./img/LogoCart.jpg" alt="Erorr"></a></div>
 
     <section data-bs-version="5.1" class="content4 cid-sFADQxFnEn" id="content4-5">
 
@@ -137,15 +132,22 @@
             </div>
         </div>
     </section>
-
-    <div class="sort">
-        <select style=" text-align: center" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value)">
-            <option value=""> Sắp xếp </option>
-            <option value="?name=price&sort=desc"> Sắp xếp giá từ cao đến thap </option>
-            <option value="?name=price&sort=asc"> Sắp xếp giá từ thap đến cao </option>
-            <option value="?name=book_name&sort=asc"> Sắp xếp tên sách  </option>
-    <!--        <option value="?name=book_name&sort=asc"> sắp xếp tên tác giả </option>-->           
-        </select>
+    <div class="chucnang">
+        <div class="search inl">
+            <form action="" method="get">
+                <input type="search" name="keyword" placeholder="Tim Kiem ....." id="text-input" />
+                <input type="submit" value="Search" />
+            </form>
+        </div>
+        <div class="sort inl">
+            <select style=" text-align: center" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value)">
+                <option value=""> Sắp xếp </option>
+                <option value="?name=price&sort=desc"> Sắp xếp giá từ cao đến thap </option>
+                <option value="?name=price&sort=asc"> Sắp xếp giá từ thap đến cao </option>
+                <option value="?name=book_name&sort=asc"> Sắp xếp tên sách </option>
+                <!--        <option value="?name=book_name&sort=asc"> sắp xếp tên tác giả </option>-->
+            </select>
+        </div>
     </div>
     <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" xmlns="http://www.w3.org/1999/html" id="features9-4">
         <div id="order">
@@ -162,23 +164,21 @@
         </div>
         <div class="container">
             <?php
-            $order_conditon="";
-            $order_name= isset($_GET['name']) ? $_GET['name'] : "";
-            $order_sort= isset($_GET['sort']) ? $_GET['sort'] : "";
-            $timkiem= isset($_GET['keyword']) ? $_GET['keyword'] : "";
-            if (!empty($order_name) && !empty($order_sort)){
-                $order_conditon="order by book.".$order_name." ".$order_sort."";
-
+            $order_conditon = "";
+            $order_name = isset($_GET['name']) ? $_GET['name'] : "";
+            $order_sort = isset($_GET['sort']) ? $_GET['sort'] : "";
+            $timkiem = isset($_GET['keyword']) ? $_GET['keyword'] : "";
+            if (!empty($order_name) && !empty($order_sort)) {
+                $order_conditon = "order by book." . $order_name . " " . $order_sort . "";
             }
 
-          if(isset($timkiem)){
-                $sql="select * from Book where book_name like '%$timkiem%' ".$order_conditon."";
-
-            }else{
-              $sql="select * from Book  ".$order_conditon."";
-//              var_dump($sql);
-//              die();
-          }
+            if (isset($timkiem)) {
+                $sql = "select * from Book where book_name like '%$timkiem%' " . $order_conditon . "";
+            } else {
+                $sql = "select * from Book  " . $order_conditon . "";
+                //              var_dump($sql);
+                //              die();
+            }
             $result = mysqli_query($conn, "$sql");
             //                $row=sqlsrv_fetch_array($result);
 
@@ -324,11 +324,12 @@
                 </div>
             </div>
         </div>
+
     </section>
     <section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2826850" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a>
         <p style="margin: 0;text-align: center;" class="display-7">Created with &#8204;</p><a style="z-index:1" href="https://mobirise.com"> Web Site Software</a>
     </section>
-    
+
 
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -337,6 +338,6 @@
     <script src="assets/dropdown/js/navbar-dropdown.js"></script>
     <script src="assets/theme/js/script.js"></script>
 
-</body>
+    </body>
 
 </html>

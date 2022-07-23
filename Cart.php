@@ -53,14 +53,7 @@
 
                     <span class="navbar-caption-wrap"><a class="navbar-caption text-secondary display-5" href="./page1.php">BK Book</a></span>
                 </div>
-                <div class="align-content-center" class="search">
-
-                    <form action="" method="get">
-                        <input type="search" name="keyword" placeholder="Tim Kiem ....." id="text-input" />
-                        <input type="submit" value="Search" />
-                    </form>
-
-                </div>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <div class="hamburger">
                         <span></span>
@@ -309,7 +302,7 @@
         <p style="margin: 0;text-align: center;" class="display-7">Created with &#8204;</p><a style="z-index:1" href="https://mobirise.com"> Web Site Software</a>
     </section>
 
-
+    
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/smoothscroll/smooth-scroll.js"></script>
