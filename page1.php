@@ -15,7 +15,7 @@
     <meta name="description" content="">
 
 
-    <title>Page 1</title>
+    <title>Home</title>
     <script src="https://kit.fontawesome.com/da3f2c352c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="assets/dropdown/css/style.css">
     <link rel="stylesheet" href="assets/socicon/css/styles.css">
     <link rel="stylesheet" href="assets/theme/css/style.css">
-    <link rel="stylesheet" href="./css/cartcss.css">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
@@ -32,13 +31,12 @@
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="/css/page1_index.css">
-    <script src="./Page_1.js"></script>
 
 
 
 </head>
 
-<body>
+<div>
     <?php
     include "connect_db/connect_db.php";
     //    $user=[];
@@ -51,9 +49,17 @@
 
         <nav class="navbar navbar-dropdown navbar-expand-lg">
             <div class="container">
-                <div class="navbar-brand">
+                <div class="navbar-brand bk-book">
 
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-secondary display-5" href="https://mobiri.se">BK Book</a></span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-secondary display-5" href="./page1.php">BK Book</a></span>
+                </div>
+                <div class="align-content-center" class="search">
+
+                    <form action="" method="get" >
+                            <input type="search" name="keyword" placeholder="Tim Kiem ....." id="text-input"/>
+                            <input type="submit" value="Search"/>
+                    </form>
+
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <div class="hamburger">
@@ -72,19 +78,19 @@
                         <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">About</a></li>
                     </ul>
                     <div class="icons-menu">
-                        <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                        <a class="iconfont-wrapper" href="https://www.facebook.com/nguyenngocanh2002/" target="_blank">
                             <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
                         </a>
-                        <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
-                            <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
+                        <a class="iconfont-wrapper" href="https://t.me/Anhtanul" target="_blank">
+                            <span class="p-2 mbr-iconfont socicon-telegram socicon"></span>
                         </a>
-                        <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                        <a class="iconfont-wrapper" href="https://www.instagram.com/nna2k2/" target="_blank">
                             <span class="p-2 mbr-iconfont socicon-instagram socicon"></span>
                         </a>
 
                     </div>
                     <?php
-                    if (isset($user['tk'])) {
+                    if (isset($user['account'])) {
                     ?>
                         <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="logout.php">
                                 Đăng xuất</a></div>
@@ -132,40 +138,48 @@
         </div>
     </section>
 
+    <div class="sort">
+        <select style=" text-align: center" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value)">
+            <option value=""> Sắp xếp </option>
+            <option value="?name=price&sort=desc"> Sắp xếp giá từ cao đến thap </option>
+            <option value="?name=price&sort=asc"> Sắp xếp giá từ thap đến cao </option>
+            <option value="?name=book_name&sort=asc"> Sắp xếp tên sách  </option>
+    <!--        <option value="?name=book_name&sort=asc"> sắp xếp tên tác giả </option>-->           
+        </select>
+    </div>
     <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" xmlns="http://www.w3.org/1999/html" id="features9-4">
-
         <div id="order">
-            <div class="modal-body">
-                <div class="cart-row">
-                    <span class="cart-item cart-header cart-column">Sản Phẩm</span>
-                    <span class="cart-price cart-header cart-column">Giá</span>
-                    <span class="cart-quantity cart-header cart-column">Số Lượng</span>
-                </div>
-                <div class="cart-items">
-                    <div class="cart-row">
-                        <div class="cart-item cart-column">
-                            <img class="cart-item-image" src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/sualai.jpg?v=1573720306000" width="100" height="100">
-                            <span class="cart-item-title">Mũi Hàn 500</span>
-                        </div>
-                        <span class="cart-price cart-column">25000đ</span>
-                        <div class="cart-quantity cart-column">
-                            <input class="cart-quantity-input" type="number" value="1">
-                            <button class="btn btn-danger" type="button">Xóa</button>
-                        </div>
-                    </div>
-                    <div class="cart-total">
-                        <strong class="cart-total-title">Tổng Cộng:</strong>
-                        <span class="cart-total-price">3223000VNĐ</span>
-                    </div>
-                </div>
+            <div><strong>Giỏ Hàng</strong></div>
+            <div>
+                <span class="border">Sản Phẩm</span>
+                <span class="border">Giá</span>
+                <span class="border">Số lượng</span>
             </div>
+            <!-- code php hoặc js vào đây -->
+            <div><strong>Tổng cộng</strong></div>
+            <div>Đóng</div>
+            <div>Thanh toán</div>
         </div>
-
-
-
-
         <div class="container">
-            <?php $result = mysqli_query($conn, "SELECT * FROM Book");
+            <?php
+            $order_conditon="";
+            $order_name= isset($_GET['name']) ? $_GET['name'] : "";
+            $order_sort= isset($_GET['sort']) ? $_GET['sort'] : "";
+            $timkiem= isset($_GET['keyword']) ? $_GET['keyword'] : "";
+            if (!empty($order_name) && !empty($order_sort)){
+                $order_conditon="order by book.".$order_name." ".$order_sort."";
+
+            }
+
+          if(isset($timkiem)){
+                $sql="select * from Book where book_name like '%$timkiem%' ".$order_conditon."";
+
+            }else{
+              $sql="select * from Book  ".$order_conditon."";
+//              var_dump($sql);
+//              die();
+          }
+            $result = mysqli_query($conn, "$sql");
             //                $row=sqlsrv_fetch_array($result);
 
             ?>
@@ -177,8 +191,8 @@
                                 <div class="image-wrapper">
                                     <!-- <img src="assets/images/mbr.jpeg" alt="Mobirise Website Builder"> -->
                                     <?php
-                                    echo "<img src='img/" . $row['image'] . "' alt='img'>";
                                     echo $row['book_id'];
+                                    echo "<img src='img/" . $row['image'] . "' alt='img'>";
                                     ?>
                                 </div>
                             </div>
@@ -193,8 +207,7 @@
                                             <p class="price mbr-fonts-style display-2"><?php echo $row['price'] ?></p>
                                             <div class="mbr-section-btn"><a href="" class="btn btn-secondary display-4">
                                                     Add to cart
-                                                </a>
-                                            </div>
+                                                </a></div>
                                         </div>
                                         <div></div>
                                     </div>
@@ -315,23 +328,6 @@
     <section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2826850" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a>
         <p style="margin: 0;text-align: center;" class="display-7">Created with &#8204;</p><a style="z-index:1" href="https://mobirise.com"> Web Site Software</a>
     </section>
-    <!-- <button class="circle" id="circle"><i class="fa-solid fa-cart-shopping" id="iconCart"></i></button>
-    <script>
-        document
-            .getElementsByClassName("circle")
-            .item(0)
-            .addEventListener("click", () => {
-                const ele = document.getElementById('order');
-                ele.style.visibility = 'visible';
-                const dom = document.getElementsByClassName("book");
-                const len = dom.length;
-                for (let i = 0; i < len; ++i) {
-                    dom.item(i).style.maxWidth = "70%";
-                }
-
-            });
-    </script> -->
-
     
 
 

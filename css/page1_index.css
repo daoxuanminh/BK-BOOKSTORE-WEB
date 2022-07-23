@@ -3,6 +3,25 @@
     max-height: 350px;
 }
 
+.sort
+{
+    text-align: right;
+    margin-right: 8%;
+}
+
+select {
+    border: 3px solid black;
+    border-radius: 2pc;
+    
+}
+.search input{
+    border: 3px solid black;
+    border-radius: 5px;
+}
+#text-input
+{
+    width: 300px;
+}
 #iconCart {
     font-size: 40px;
     /* border: 1px solid black; */
