@@ -64,7 +64,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li class="nav-item"><a class="nav-link link text-primary display-7" href="#top">Home&nbsp;</a></li>
-                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">Features</a></li>
+                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="./infor_order.php">Order</a></li>
                         <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">Shop</a>
                         </li>
                         <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">About</a></li>

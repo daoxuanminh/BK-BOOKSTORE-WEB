@@ -31,6 +31,7 @@
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="./css/cartcss.css">
+    <link rel="stylesheet" href="css/page1_index.css">
 
 
 
@@ -160,7 +161,7 @@
             <div class="container">
                 <div class="navbar-brand bk-book">
 
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-secondary display-5" href="./page1.php">BK Book</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-secondary display-5" href="./page1.php"><img src="./img/logo.jpg" alt="eroor" id="logo"></a></span>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <div class="hamburger">
