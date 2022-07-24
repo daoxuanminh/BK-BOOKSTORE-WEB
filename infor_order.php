@@ -15,7 +15,7 @@
     <meta name="description" content="">
 
 
-    <title>Cart</title>
+    <title>Information Order</title>
     <script src="https://kit.fontawesome.com/da3f2c352c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -31,129 +31,16 @@
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="./css/cartcss.css">
-
+    <link rel="stylesheet" href="./css/infor_order.css">
 
 
 </head>
 
-<div>
+<body>
     <?php
     include "connect_db/connect_db.php";
-    global $tong;
-    if (!isset($_SESSION['user'])){
-        header("Location:page1.php");
-
-
-
-    }else{
-    $tong=0;
-    //làm rỗng giỏ hàng
-//    if(isset($_GET['delcart'])&&($_GET['delcart']==1)) unset($_SESSION['giohang']);
-    //xóa sp trong giỏ hàng
-    if(isset($_GET['delid'])&&($_GET['delid']>=0)){
-        array_splice($_SESSION['giohang'],$_GET['delid'],1);
-    }
-    $cart_id= isset($_GET['GetID']) ? $_GET['GetID'] : "";
     $user = (isset($_SESSION['user'])) ? $_SESSION['user'] : [];
-    if(!isset($_SESSION['giohang'])){$_SESSION['giohang']=[];}
-    if (isset($cart_id)){
-    $book_id=$cart_id;
-    $query = " select * from Book where book_id='".$book_id."'";
-    $result = mysqli_query($conn,$query);
-    while ($row=mysqli_fetch_array($result)) {
-        $book_id = $row['book_id'];
-        $book_name = $row['book_name'];
-        $price = $row['price'];
-        $quantity = 1;
-        $image = $row['image'];
-//        kiem tra sp co trong gio hang
-
-        $f1=0; // kiem tra sp co trung trong gio hang khong
-        for ($i=0;$i<sizeof($_SESSION['giohang']);$i++){
-            if($_SESSION['giohang'][$i][4]==$book_id){
-                $f1=1;
-                $quantitynew=$quantity +$_SESSION['giohang'][$i][3];
-                $_SESSION['giohang'][$i][3]=$quantitynew;
-                break;
-
-            }
-        }
-    // neu khong co thi them moi
-        if ($f1==0) {
-
-            //them sp moi vao gio hang
-            $sp = [$image, $book_name, $price, $quantity, $book_id];
-            $_SESSION['giohang'][] = $sp;
-        }
-//        var_dump($_SESSION['giohang']);
-        header("Location:page1.php");
-
-    }
-    }
-        function showgiohang(){
-            global $tong;
-        if(isset($_SESSION['giohang'])&&(is_array($_SESSION['giohang']))){
-             for ($i=0;$i < sizeof($_SESSION['giohang']);$i++){
-
-                 $tt =  (int)$_SESSION['giohang'][$i][2]* (int)$_SESSION['giohang'][$i][3];
-                 $GLOBALS['tong']=$GLOBALS['tong']+$tt;
-
-                 ?>
-
-                  <div class="card book">
-                    <div class="card-wrapper">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-4 img">
-                                <div class="image-wrapper">
-                                    <!-- <img src="assets/images/mbr.jpeg" alt="Mobirise Website Builder"> -->
-                                    <?php
-                                    // echo $row['book_id'];
-                                    echo "<img class='img' src='img/" . $_SESSION['giohang'][$i][0] . "' alt='img'>";
-                                    ?>
-                                    </div>
-                                    </div>
-                                    <div class="col-12 col-md">
-                                        <div class="card-box">
-                                            <div class="row">
-                                                <div class="col-md">
-                                                    <p class="book-name"><?php echo $_SESSION['giohang'][$i][1] ?>&nbsp;</p>
-                                                </div>
-                                                <div class="col-md-auto">
-                                                    <p class="price-1"><?php echo $_SESSION['giohang'][$i][2].".VND" ?></p><br>
-                                                    <p class="price-1"><?php echo $_SESSION['giohang'][$i][3] ?></p>
-<!---->
-<!--                                                    <div class="mbr-section-btn">  <a  href="cart.php?delid='--><?php //echo $i ?><!--'"  class="btn btn-secondary display-4">-->
-<!--                                                            Delete-->
-<!--                                                        </a>  </div>-->
-
-                                                    <a href="cart.php?delid=<?php echo $i ?>" class="btn btn-secondary display-4" class="mbr-section-btn"> Delete</a>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
-
-
-            <?php
-             } ?>
-     <?php   }
-        }
-    }
     ?>
-
-    <?php
-        if (isset($_SESSION['tb'])) {
-            ?>
-            <script>alert("Đã thanh toán thành công!")</script>
-            <?php
-            unset ($_SESSION['tb']);
-        }
-    ?>
-
     <section data-bs-version="5.1" class="menu menu3 cid-sFAA5oUu2Y" once="menu" id="menu3-1">
 
         <nav class="navbar navbar-dropdown navbar-expand-lg">
@@ -172,9 +59,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="#top">Home&nbsp;</a></li>
-                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">Features</a></li>
-                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">Shop</a>
+                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="./page1.php">Home&nbsp;</a></li>
+                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="./page1.php">Features</a></li>
+                        <li class="nav-item"><a class="nav-link link text-primary display-7" href="./page1.php">Shop</a>
                         </li>
                         <li class="nav-item"><a class="nav-link link text-primary display-7" href="page1.php">About</a></li>
                     </ul>
@@ -192,7 +79,7 @@
                     </div>
                     <?php
                     if (isset($user['account'])) {
-                        ?>
+                    ?>
                         <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="logout.php">
                                 Logout</a></div>
                     <?php } else { ?>
@@ -214,33 +101,30 @@
             <div class="row justify-content-center">
                 <div class="title col-md-12 col-lg-10">
                     <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
-                        <strong>Our Shop Features</strong>
+                        <strong>Your Order</strong>
                     </h3>
-                    <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+                    <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-5">Mua sắm thuận tiện hơn với <strong>BK BOOK</strong>.</h4>
 
                 </div>
             </div>
         </div>
     </section>
 
+    <section>
+        
+        <table>
+            <tr>
+                <th>STT</th>
+                <th>Purchased</th>
+                <th>Shipping Status</th>
+                <th>Order Date</th>
+                <th>Shipping Date</th>
+                <th>Sum Price</th>
+            </tr>
 
 
-
-    <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" xmlns="http://www.w3.org/1999/html" id="features9-4">
-
-        <div class="container">
-          <?php showgiohang(); ?>
-        </div>
-
-
+        </table>
     </section>
-
-    <div class="sum">
-        <h1><strong>Tổng</strong></h1>
-        <div class="top gia"><?php  echo $tong ?><br></div>
-        <div class="top" ><a href="thanhtoan.php?Tong=<?php echo $tong ?>"><button><strong> Thanh Toán</strong></button></a></div>
-    </div>
-
 
 
     <section data-bs-version="5.1" class="contacts3 map1 cid-sFAOgbarYq" id="contacts3-c">
@@ -357,6 +241,6 @@
     <script src="assets/dropdown/js/navbar-dropdown.js"></script>
     <script src="assets/theme/js/script.js"></script>
 
-    </body>
+</body>
 
 </html>

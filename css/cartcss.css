@@ -93,7 +93,7 @@ select {
 }
 
 button{
-  background-color: #FF6666;
+  background-color: #fc7777;
   margin-bottom: 100px;
   bottom: 0px;
   border-radius: 5px;
@@ -119,5 +119,10 @@ button{
   border-radius: 15px;
   text-align: center;
   padding: 30px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
+.top :hover {
+  background-color: #ec3434;
+  color: #EDF5E1;
+}

@@ -30,7 +30,7 @@
     </noscript>
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-    <link rel="stylesheet" href="/css/page1_index.css">
+    <link rel="stylesheet" href="css/page1_index.css">
 
 
 
@@ -42,7 +42,6 @@
     //    $user=[];
     $user = (isset($_SESSION['user'])) ? $_SESSION['user'] : [];
     // echo $user;
-    //    $user=$_SESSION['user'];
     ?>
 
     <section data-bs-version="5.1" class="menu menu3 cid-sFAA5oUu2Y" once="menu" id="menu3-1">
@@ -88,7 +87,11 @@
                         <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="logout.php">
                                 Logout</a></div>
                     <?php } else { ?>
-
+                        <script>
+                            
+                                alert("Hay dang nhap");
+                            
+                        </script>
                         <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="login.php">
                                 Login</a></div>
                     <?php } ?>
@@ -150,18 +153,18 @@
         </div>
     </div>
     <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" xmlns="http://www.w3.org/1999/html" id="features9-4">
-        <div id="order">
+        <!-- <div id="order">
             <div><strong>Giỏ Hàng</strong></div>
             <div>
                 <span class="border">Sản Phẩm</span>
                 <span class="border">Giá</span>
                 <span class="border">Số lượng</span>
             </div>
-            <!-- code php hoặc js vào đây -->
+            //code php hoặc js vào đây
             <div><strong>Tổng cộng</strong></div>
             <div>Đóng</div>
             <div>Thanh toán</div>
-        </div>
+        </div>  -->
         <div class="container">
             <?php
             $order_conditon = "";
@@ -191,7 +194,7 @@
                                 <div class="image-wrapper">
                                     <!-- <img src="assets/images/mbr.jpeg" alt="Mobirise Website Builder"> -->
                                     <?php
-                                    echo $row['book_id'];
+                                    
                                     echo "<img src='img/" . $row['image'] . "' alt='img'>";
                                     ?>
                                 </div>
@@ -204,8 +207,8 @@
                                             <p class="mbr-text mbr-fonts-style display-7"><?php echo substr($row['description'], 0, 200) . "..." ?><br></p>
                                         </div>
                                         <div class="col-md-auto">
-                                            <p class="price mbr-fonts-style display-2"><?php echo $row['price'] ?></p>
-                                            <div class="mbr-section-btn"><a href="" class="btn btn-secondary display-4">
+                                            <p class="price mbr-fonts-style display-2"><?php echo $row['price'].".VND" ?></p>
+                                            <div class="mbr-section-btn"><a href="cart.php?GetID=<?php echo $row['book_id'] ?>" class="btn btn-secondary display-4">
                                                     Add to cart
                                                 </a></div>
                                         </div>
@@ -330,13 +333,15 @@
         <p style="margin: 0;text-align: center;" class="display-7">Created with &#8204;</p><a style="z-index:1" href="https://mobirise.com"> Web Site Software</a>
     </section>
 
-
+        
 
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/smoothscroll/smooth-scroll.js"></script>
     <script src="assets/ytplayer/index.js"></script>
     <script src="assets/dropdown/js/navbar-dropdown.js"></script>
     <script src="assets/theme/js/script.js"></script>
+
+    <!--    <script src="err_user_order."></script>-->
 
     </body>
 
