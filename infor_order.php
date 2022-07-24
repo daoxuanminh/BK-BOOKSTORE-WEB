@@ -30,8 +30,8 @@
     </noscript>
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-    <link rel="stylesheet" href="./css/cartcss.css">
-    <link rel="stylesheet" href="./css/infor_order.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="css/infor_order.css">
 
 
 </head>
@@ -110,8 +110,8 @@
         </div>
     </section>
 
-    <section>
-        
+    <section id="table">
+
         <table>
             <tr>
                 <th>STT</th>
@@ -119,9 +119,32 @@
                 <th>Shipping Status</th>
                 <th>Order Date</th>
                 <th>Shipping Date</th>
+                <th>Name product</th>
                 <th>Sum Price</th>
             </tr>
+            <?php
+            $sql = "select * from order_i where customer_id =  " . $_SESSION['user']['customer_id'] . "";
+            $result = mysqli_query($conn, "$sql");
+            $i = 1;
+            ?>
+            <?php while ($row = mysqli_fetch_array($result)) { ?>
+                <tr>
+                    <th><?php echo $i ?></th>
+                    <th> <?php echo $row['purchased'] ?></th>
+                    <th> <?php echo $row['shipping_status'] ?></th>
+                    <th><?php echo $row['order_date'] ?></th>
+                    <th><?php echo $row['shipping_date'] ?></th>
+                    <th>
+                    <div>Sách 1</div>
+                    <div>Sách 1</div>
+                    <div>Sách 1</div>
+                    </th>
+                    <th> <?php echo $row['sum_price'] ?></th>
+                </tr>
 
+
+            <?php $i++;
+            } ?>
 
         </table>
     </section>
