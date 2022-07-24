@@ -17,12 +17,14 @@ input {
     font-weight: bolder;
 }
 #text-input{
-    width: 500px;
+    width: 350px;
+    max-width: 400px;
 }
 select {
     height: 35px;
     border-radius: 10px;
     font-weight: bolder;
+    /* text-align: left; */
 }
 
 .chucnang

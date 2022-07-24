@@ -150,6 +150,10 @@
                 <option value="?name=book_name&sort=asc"> Sắp xếp tên sách </option>
                 <!--        <option value="?name=book_name&sort=asc"> sắp xếp tên tác giả </option>-->
             </select>
+            <select name="" id="">
+                <option value=""> Thể loại </option>
+                <option value=""> Thể loại </option>
+            </select>
         </div>
     </div>
     <section data-bs-version="5.1" class="features8 cid-sFADMOwrhN" xmlns="http://www.w3.org/1999/html" id="features9-4">
